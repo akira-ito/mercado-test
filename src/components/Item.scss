@@ -1,0 +1,44 @@
+.Item {
+	display: flex;
+
+	&-Picture {
+		float: left;
+		margin: 16px;
+
+		&-Img {
+			border-radius: 4px;
+			background-size: cover;
+			height: 160px;
+			width: 160px;
+		}
+	}
+
+	&-Description {
+		float: left;
+		width: 100%;
+
+		&-Amount {
+			padding-top: 50px;
+			display: flex;
+		}
+		&-Price {
+			font-size: 24px;
+			float: left;
+			width: 50%;
+
+			img {
+				padding-left: 10px;
+			}
+		}
+		&-State {
+			font-size: 12px;
+			text-align: center;
+			padding-top: 14px;
+			float: left;
+			width: 50%;
+		}
+		&-Title {
+			padding-top: 32px;
+		}
+	}
+}
