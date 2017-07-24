@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import Item from './Item.jsx';
+import _ from 'lodash'
 import './Items.scss'
 
 export default class Items extends React.Component {
@@ -15,13 +17,22 @@ export default class Items extends React.Component {
         }
     }
   	render() {
+        let { items } = this.state;
+
+        if (_.isEmpty(items))
+            return (
+                <section className="Items">
+                    Carregando..
+                </section>
+            )
+
     	return (
             <section className="Items">
-                { this.state.items.map((item, i) => (
-                    <div key={item.id}>
+                { items.map((item, i) => (
+                    <Link to={`/items/${item.id}`} key={item.id}>
                         {i>0 && <div className="Items-Line"></div>}
                         <Item {...item} />
-                    </div>
+                    </Link>
                 )) }
             </section>
     	);

@@ -1,0 +1,98 @@
+@import '../sass/mixins';
+
+.Details {
+	border-radius: 4px;
+	background-color: white;
+
+
+	&-Root {
+		display: flex;
+
+		@include mobile {
+			display: initial;
+		}
+	}
+
+	&-Picture {
+		float: left;
+		padding: 16px;
+		width: 100%;
+
+		@include mobile {
+			float: none;
+		}
+
+		img {
+			border-radius: 4px;
+		    background-size: cover;
+			width: 100%;
+			max-width: 680px;
+
+			@include tablet {
+				width: 100%;
+			}
+
+			@include desktop {
+				width: 680px;
+			}
+		}
+		
+	}
+
+	&-Specification {
+		float: left;
+		padding-right: 32px;
+		max-width: 50%;
+
+		@include mobile {
+			float: none;
+			padding: 32px;
+			max-width: 100%;
+		}
+
+		.Condition {
+			padding-top: 32px;
+			font-size: 14px;
+		}
+
+		.Title {
+			padding-top: 16px;
+			font-size: 24px;
+		}
+
+		.Amount {
+			padding-top: 32px;
+			font-size: 46px;
+		}
+
+		.Comprar {
+			padding: 32px 0 0 0;
+
+			button {
+				background-color: #3483FA;
+				border-radius: 4px;
+				border: none;
+				width: 100%;
+				font-size: 14px;
+				padding: 14px;
+				color: white;
+			}
+		}
+	}
+
+	&-Description {
+		padding-left: 32px;
+
+		.Title {
+			font-size: 28px;
+			padding-bottom: 32px;
+		}
+
+		.Text {
+			font-size: 16px;
+			padding-bottom: 32px;
+			color: #999999;
+			width: 680px;
+		}
+	}
+}

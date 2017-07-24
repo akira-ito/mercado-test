@@ -1,17 +1,9 @@
-$tablet-width: 768px;
-$desktop-width: 1024px;
+@import '../sass/mixins';
 
-@mixin tablet {
-  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
-    @content;
-  }
-}
-
-@mixin desktop {
-  @media (min-width: #{$desktop-width}) {
-    @content;
-  }
-}
+$imgLogo: '../public/img/logo.png';
+$imgLogo2x: '../public/img/logo@2x.png';
+$imgSearch: '../public/img/search.png';
+$imgSearch2x: '../public/img/search@2x.png';
 
 .Header {
 	height: 55px;
@@ -32,8 +24,18 @@ $desktop-width: 1024px;
 		.Header-Logo {
 			float: left;
 
-			img {
-				height: 40px;
+			.Img {
+				background-image: url($imgLogo);
+				background-repeat: no-repeat;
+				height: 44px;
+				width: 53px;
+				background-position-y: center;
+				background-position-x: center;
+				background-size: contain;
+
+				@include mobile {
+					background-image: url($imgLogo2x);
+				}
 			}
 		}
 
@@ -65,6 +67,20 @@ $desktop-width: 1024px;
 				border-radius: 0 4px 4px 0;
 				cursor: pointer;
 				background-color: #EEEEEE;
+
+				.Img {
+					background-image: url($imgSearch);
+					background-repeat: no-repeat;
+					height: 25px;
+					width: 25px;
+					background-position-y: center;
+					background-position-x: center;
+					background-size: contain;
+
+					@include mobile {
+						background-image: url($imgSearch2x);
+					}
+				}
 			}
 		}
 	}

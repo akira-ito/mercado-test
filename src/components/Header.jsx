@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import _ from 'lodash'
-import imgLogo from '../public/img/logo.png'
-import imgSearch from '../public/img/search.png'
 import './Header.scss'
 
 export default class Header extends React.Component {
@@ -23,7 +21,9 @@ export default class Header extends React.Component {
     		<header className="Header">
     			<div className="Header-Content content">
     				<div className="Header-Logo">
-    					<img src={imgLogo} />
+    					<Link to='/'>
+    						<div className="Img" />
+    					</Link>
     				</div>
     				<form className="Header-Form">
     					<div className="Header-Form-Input">
@@ -32,7 +32,7 @@ export default class Header extends React.Component {
 						
 						<Link to={ search.length==0 ? '/' : `/items?search=${search}`}>
 							<button className="Header-Form-Search">
-								<img src={imgSearch} />
+								<div className="Img" />
 							</button>
 						</Link>
     				</form>

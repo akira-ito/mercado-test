@@ -1,5 +1,14 @@
+@import '../sass/mixins';
+$imgShipping: '../public/img/shipping.png';
+$imgShipping2x: '../public/img/shipping@2x.png';
+
 .Item {
 	display: flex;
+	color: #333333;
+
+	&:hover {
+		background-color: #fbfbfb;
+	}
 
 	&-Picture {
 		float: left;
@@ -26,8 +35,19 @@
 			float: left;
 			width: 50%;
 
-			img {
+			.Img {
 				padding-left: 10px;
+				background-image: url($imgShipping);
+				background-repeat: no-repeat;
+			    background-position-y: center;
+			    background-position-x: center;
+			    background-size: contain;
+			    padding: 0px 9px;
+			    margin-left: 10px;
+
+				@include mobile {
+					background-image: url($imgShipping2x);
+				}
 			}
 		}
 		&-State {
@@ -39,6 +59,7 @@
 		}
 		&-Title {
 			padding-top: 32px;
+			font-size: 18px;
 		}
 	}
 }
